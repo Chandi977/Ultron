@@ -40,7 +40,7 @@ const recognition = new SpeechRecognition();
 recognition.interimResults = true;
 recognition.lang = "en-US"; // Set preferred language
 
-const api_key = "YOUR_OPENWEATHER_API_KEY"; // OpenWeather API key
+const api_key = "5878944582ef8963d92960f95ef05d29"; // OpenWeather API key
 const chatbox = document.querySelector(".chatbox");
 let replay = "";
 
@@ -59,7 +59,7 @@ recognition.addEventListener("result", (e) => {
   replay = Array.from(e.results)
     .map((result) => result[0])
     .map((result) => result.transcript)
-    .join("");
+    .join(" ");
 
   if (e.results[0].isFinal) {
     addMessageToChat(`You said: ${replay}`, "sent");
@@ -81,7 +81,7 @@ function handleFinalResults(finalText) {
       .then((cityName) => fetchWeather(cityName))
       .catch(handleWeatherError);
   } else if (finalText.includes("CAN YOU TELL ME THE WEATHER OF")) {
-    let query = finalText.split("TELL ME ABOUT")[1].trim();
+    let query = finalText.split("CAN YOU TELL ME THE WEATHER OF")[1].trim();
     if (query) {
       fetchWeather(query);
     } else {
@@ -107,9 +107,6 @@ function handleFinalResults(finalText) {
   } else if (finalText.includes("TELL ME ABOUT")) {
     let query = finalText.split("TELL ME ABOUT")[1].trim();
     fetchWikipediaInfo(query);
-  } else if (finalText.includes("TRANSLATE TO")) {
-    let lang = finalText.split("TRANSLATE TO")[1].trim().toLowerCase();
-    translateText(finalText, lang);
   } else {
     replay = "Searching on Google.";
     addMessageToChat(replay, "received");
@@ -166,32 +163,6 @@ function handleWeatherError(error) {
   replay = `Error: ${error.message || "Sorry, I cannot find the city."}`;
   addMessageToChat(replay, "received");
   speak(replay);
-}
-
-function translateText(text, targetLang) {
-  const url = `https://translation.googleapis.com/language/translate/v2?key=YOUR_GOOGLE_API_KEY`;
-  const body = JSON.stringify({
-    q: text,
-    target: targetLang,
-  });
-
-  fetch(url, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: body,
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      const translatedText = data.data.translations[0].translatedText;
-      replay = `Translation: ${translatedText}`;
-      addMessageToChat(replay, "received");
-      speak(replay);
-    })
-    .catch((error) => {
-      replay = "Sorry, I couldn't translate that.";
-      addMessageToChat(replay, "received");
-      speak(replay);
-    });
 }
 
 function getCurrentCity() {

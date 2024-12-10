@@ -9,7 +9,7 @@
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="/css/style.css"> <!-- Corrected path -->
+    <link rel="stylesheet" href="css/style.css"> <!-- Corrected path -->
 </head>
 
 <body>
@@ -30,23 +30,29 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Voice Selector -->
             <div class="voice-selector">
                 <label for="voice-select">Select Voice Profile:</label>
                 <select id="voice-select">
                     <!-- The options will be dynamically filled -->
                 </select>
             </div>
+
+            <!-- Chatbox -->
             <div class="chatbox">
                 <!-- Messages will go here -->
             </div>
+
+            <!-- Input and Mic Button -->
             <div class="sendbox">
                 <input type="text" placeholder="Type your message..." id="champ">
                 <button id="mic-btn" onclick="champ()">
                     <i class="fas fa-microphone"></i>
                 </button>
             </div>
-            <!-- Voice Selection Dropdown -->
 
+            <!-- Animated Circles for UI -->
             <div class="wrapper">
                 <div class="circle circle-1"></div>
                 <div class="circle circle-2"></div>
@@ -59,7 +65,8 @@
             </div>
         </div>
     </div>
-    <script src="/js/script.js"></script> <!-- Corrected path -->
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.1204.0.min.js"></script>
+    <script src="js/script.js"></script> <!-- Corrected path -->
 </body>
 
 </html>
