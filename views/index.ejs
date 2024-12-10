@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Interface with Mic</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css"> <!-- Corrected path -->
+</head>
+
+<body>
+    <div class="maindiv">
+        <div class="mobile">
+            <div class="head">
+                <div class="notch"></div>
+                <div class="profilebox">
+                    <div class="left">
+                        <i class="fas fa-user-circle"></i>
+                        <div class="profile">
+                            <img src="profile.jpg" alt="profile">
+                            <div class="pdetail">
+                                <h3>Speak Bot</h3>
+                                <p>Online</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="voice-selector">
+                <label for="voice-select">Select Voice Profile:</label>
+                <select id="voice-select">
+                    <!-- The options will be dynamically filled -->
+                </select>
+            </div>
+            <div class="chatbox">
+                <!-- Messages will go here -->
+            </div>
+            <div class="sendbox">
+                <input type="text" placeholder="Type your message..." id="champ">
+                <button id="mic-btn" onclick="champ()">
+                    <i class="fas fa-microphone"></i>
+                </button>
+            </div>
+            <!-- Voice Selection Dropdown -->
+
+            <div class="wrapper">
+                <div class="circle circle-1"></div>
+                <div class="circle circle-2"></div>
+                <div class="circle circle-3"></div>
+                <div class="circle circle-4"></div>
+                <div class="circle circle-5"></div>
+                <div class="circle circle-6"></div>
+                <div class="circle circle-7"></div>
+                <div class="circle circle-8"></div>
+            </div>
+        </div>
+    </div>
+    <script src="/js/script.js"></script> <!-- Corrected path -->
+</body>
+
+</html>
