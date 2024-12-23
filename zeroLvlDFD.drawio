@@ -1,0 +1,72 @@
+<mxfile>
+  <diagram name="Ultron DFD">
+    <mxGraphModel dx="1000" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        
+        <!-- External Entities -->
+        <mxCell id="dataSource" value="Data Sources (MS MARCO, Natural Questions)" style="ellipse;html=1;whiteSpace=wrap;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="50" y="100" width="180" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="user" value="User (Researcher/Developer)" style="ellipse;html=1;whiteSpace=wrap;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="50" y="300" width="150" height="60" as="geometry"/>
+        </mxCell>
+        
+        <!-- Processes -->
+        <mxCell id="dataPreparation" value="Data Preparation" style="rectangle;rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="100" width="180" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="encoding" value="Document Encoding" style="rectangle;rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="550" y="100" width="180" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="queryGeneration" value="Query Generation" style="rectangle;rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="300" width="180" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="evaluation" value="Training/Evaluation" style="rectangle;rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="550" y="300" width="180" height="60" as="geometry"/>
+        </mxCell>
+        
+        <!-- Data Stores -->
+        <mxCell id="documentStore" value="Document Storage" style="shape=folder;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="800" y="100" width="180" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="resultsStore" value="Results Repository" style="shape=folder;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="800" y="300" width="180" height="60" as="geometry"/>
+        </mxCell>
+        
+        <!-- Flows -->
+        <mxCell id="flow1" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+          <source id="dataSource"/>
+          <target id="dataPreparation"/>
+        </mxCell>
+        <mxCell id="flow2" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+          <source id="dataPreparation"/>
+          <target id="encoding"/>
+        </mxCell>
+        <mxCell id="flow3" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+          <source id="encoding"/>
+          <target id="documentStore"/>
+        </mxCell>
+        <mxCell id="flow4" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+          <source id="queryGeneration"/>
+          <target id="evaluation"/>
+        </mxCell>
+        <mxCell id="flow5" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+          <source id="evaluation"/>
+          <target id="resultsStore"/>
+        </mxCell>
+        <mxCell id="flow6" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+          <source id="user"/>
+          <target id="queryGeneration"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

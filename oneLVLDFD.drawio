@@ -1,0 +1,54 @@
+<mxfile>
+  <diagram name="Level 1">
+    <mxGraphModel dx="1000" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="User" value="User" style="ellipse;html=1;whiteSpace=wrap;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="40" y="300" width="100" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="SpeakBotSystem" value="SpeakBot System" style="rectangle;rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="200" y="200" width="200" height="300" as="geometry"/>
+        </mxCell>
+        <mxCell id="APIs" value="External APIs" style="ellipse;html=1;whiteSpace=wrap;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="460" y="300" width="100" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="SpeechRecognition" value="Speech Recognition" style="ellipse;html=1;whiteSpace=wrap;aspect=fixed;" vertex="1" parent="SpeakBotSystem">
+          <mxGeometry x="20" y="40" width="150" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="CommandHandling" value="Command Handling" style="ellipse;html=1;whiteSpace=wrap;aspect=fixed;" vertex="1" parent="SpeakBotSystem">
+          <mxGeometry x="20" y="120" width="150" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="VoiceSynthesis" value="Voice Synthesis" style="ellipse;html=1;whiteSpace=wrap;aspect=fixed;" vertex="1" parent="SpeakBotSystem">
+          <mxGeometry x="20" y="200" width="150" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="ChatboxUpdates" value="Chatbox Updates" style="ellipse;html=1;whiteSpace=wrap;aspect=fixed;" vertex="1" parent="SpeakBotSystem">
+          <mxGeometry x="20" y="280" width="150" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="APICommunication" value="External API Communication" style="ellipse;html=1;whiteSpace=wrap;aspect=fixed;" vertex="1" parent="SpeakBotSystem">
+          <mxGeometry x="20" y="360" width="150" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="UserToSpeakBot" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+          <source id="User"/>
+          <target id="SpeakBotSystem"/>
+        </mxCell>
+        <mxCell id="SpeakBotToUser" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+          <source id="SpeakBotSystem"/>
+          <target id="User"/>
+        </mxCell>
+        <mxCell id="SpeakBotToAPIs" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+          <source id="SpeakBotSystem"/>
+          <target id="APIs"/>
+        </mxCell>
+        <mxCell id="APIsToSpeakBot" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+          <source id="APIs"/>
+          <target id="SpeakBotSystem"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
